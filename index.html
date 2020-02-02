@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes mots</title>
+    <style>
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: #D1F7D5;
+    }
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden
+    }
+    svg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+    }
+    #add-words {
+        /*display: block;*/
+        z-index: 20;
+        /*display: inline-block;*/
+        margin: 2em;
+    }
+    #svgcontainer {
+        z-index: -1;
+    }
+    input {
+        position: fixed;
+        top: 0px;
+        border: 0px solid #ccc;
+        background: white;
+        font-family: monospace;
+        padding: 7px 10px;
+        font-size: 18px;
+        margin: 20px 10px 20px 0;
+        /*color: black;*/
+        color: #38A56F;
+        z-index: 50;
+        font-family: "Source Code Pro";
+    }
+    input:focus {
+        /*background-color: yellow;*/
+        outline: none;
+    }
+
+    #submit {
+        left: 20px;
+        top: 50px;
+    }
+    #save-svg {
+        left: 205px;
+        top: 50px;
+    }
+    #word {
+        left: 20px;
+    }
+    </style>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="opentype.min.js"></script>
+    <script src="FileSaver.min.js" charset="utf-8"></script>
+    <script src="text-to-svg.js"></script>
+    <script src="sketch.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="svgcontainer">
+    </div>
+    <form name="myform" id="newword" autocomplete="off" method="post">
+        <input autocomplete="false" name="hidden" type="text" style="display:none;">
+        <input type="text" id="word" placeholder="Écrivez un mot &hellip;" spellcheck="false">
+        <input name="Submit" id="submit" type="submit" value="Ajouter un mot">
+        <input name="Submit" id="save-svg" type="button" value="Télécharger en .SVG">
+    </form>
+</body>
+
+</html>
